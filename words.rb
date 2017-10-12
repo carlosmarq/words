@@ -18,7 +18,7 @@ end
 
 
 
-    (0..@ALLwords.length-1).each do |i|
+    (0...@ALLwords.length).each do |i|
         (0..@ALLwords.length-1).each do |j|
         combine = @ALLwords[j]+@ALLwords[i]
         @ALLcombinations << combine
@@ -36,6 +36,7 @@ end
         if @ALLcombinations[i] == @ALLwords[j]
           #puts "#{@ALLcombinations[i]} si es igual a #{}{@ALLwords[j]} "
           puts "#{@ALLcombinations[i]}"
+          #break
         end
       end
     end
