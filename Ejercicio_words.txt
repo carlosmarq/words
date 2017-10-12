@@ -1,0 +1,82 @@
+﻿http://coj.uci.cu/24h/problem.xhtml?pid=1228
+
+
+
+1, Cuál es el problema
+
+
+Crear un diccionario que contenga todas las combinaciones de dos palabras que hacen parte de una entrada definida y presentarlas en orden alfabético.
+
+
+2, Cómo lo soluciono
+Procesar la entrada, obtener las posibles combinaciones de dos palabras ingresadas y filtrar las combinaciones formadas  a partir de dos de las palabras ingresadas. Presentar las combinaciones de palabras ingresadas en orden alfabético.
+
+
+3, Pasos de  la solución
+* Leer una entrada
+* Crear un arreglo que tenga todas las palabras ingresadas en la entrada.
+* Crear otro arreglo que contenga todas las combinaciones de dos palabras que hacen parte del listado ingresado.
+* Verificar si cada una de las palabras ingresadas  corresponde con la combinación de dos palabras presentes en el listado.
+* Presentar la salida en orden alfabético.
+
+
+4, Código en Ruby o JS
+
+
+
+
+RUBY:
+
+
+@line_num=0
+@ALLwords = []
+@ALLcombinations = []
+File.open('words.txt').each do |line|
+  @line_num=@line_num+1
+  @y0=line
+  @y0.delete!("\n")
+#  print @y0
+  @ALLwords << @y0
+end
+
+
+#print @ALLwords
+
+
+#print @ALLwords[0]
+#print @ALLwords.length
+
+
+#system 'clear'
+
+
+
+
+
+
+    (0..@ALLwords.length-1).each do |i|
+        (0..@ALLwords.length-1).each do |j|
+        combine = @ALLwords[j]+@ALLwords[i]
+        @ALLcombinations << combine
+      end
+    end
+
+
+
+
+#    print @ALLcombinations
+#   print @ALLcombinations.length
+
+
+
+
+
+
+    (0..@ALLcombinations.length-1).each do |i|
+        (0..@ALLwords.length-1).each do |j|
+        if @ALLcombinations[i] == @ALLwords[j]
+          #puts "#{@ALLcombinations[i]} si es igual a #{}{@ALLwords[j]} "
+          puts "#{@ALLcombinations[i]}"
+        end
+      end
+    end
